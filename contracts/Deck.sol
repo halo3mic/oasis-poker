@@ -1,9 +1,11 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
-import "./Constants.sol";
+import "node_modules/@oasisprotocol/sapphire-contracts/contracts/Sapphire.sol"; // todo: replace with relative path
 import "./Cards.sol";
 
+
+uint8 constant NCARDS = 52;
 
 struct Deck {
     bytes indices;
@@ -11,36 +13,32 @@ struct Deck {
 
 library DeckUtils {
     
-    function create() internal pure returns (Deck memory) {
-        // bytes memory seed = Sapphire.randomBytes(NCARDS, "");
-        bytes memory seed = new bytes(NCARDS);
-        for (uint i=0; i<NCARDS; ++i) {
-            seed[i] = bytes1(uint8(i));
-        }
+    function create() internal view returns (Deck memory) {
+        bytes memory seed = Sapphire.randomBytes(NCARDS, "");
         return Deck(seedIntoCardIndices(seed));
     }
 
     function seedIntoCardIndices(bytes memory randomBytes) internal pure returns (bytes memory) {
         require(randomBytes.length == NCARDS, "Invalid random bytes length");
         bytes memory indices = new bytes(NCARDS);
-        bytes6 bloomFilter;
+        uint bloomFilter;
         for (uint i=0; i<randomBytes.length; ++i) {
-            uint8 cardIdx = uint8(randomBytes[i]);
+            uint cardIdx = uint8(randomBytes[i]) % NCARDS;
             while (true) {
-                bool isInDeck = (bloomFilter & (ONE_B6 << cardIdx)) != 0;
+                bool isInDeck = (bloomFilter & (uint(1) << cardIdx)) > 0;
                 if (isInDeck) {
                     cardIdx = (cardIdx + 1) % NCARDS;
                 } else {
-                    bloomFilter |= ONE_B6 << cardIdx;
+                    bloomFilter |= uint(1) << cardIdx;
                     break;
                 }
             }
-            indices[i] = bytes1(cardIdx);
+            indices[i] = bytes1(uint8(cardIdx));
         }
         return indices;
     }
 
-    function pop(Deck storage deck) internal returns (Card memory) {
+    function pop(Deck memory deck) internal returns (Card memory) {
         require(deck.indices.length > 0, "Deck is empty");
         bytes memory indices = deck.indices;
         bytes1 cardIdx = indices[indices.length - 1];

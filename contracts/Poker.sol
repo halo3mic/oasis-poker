@@ -6,6 +6,7 @@ import "./Cards.sol";
 
 // todo: add events
 // todo: add money handling
+// todo: add game
 
 contract Poker {
     using GameUtils for Game;
@@ -20,11 +21,6 @@ contract Poker {
 
     function joinGame(uint gameId) external {
         gameToDeck[gameId].join(msg.sender);
-    }
-
-    function nextCard(uint gameId) external returns (Card memory) {
-        Game storage game = gameToDeck[gameId];
-        return game.deck.pop();
     }
 
 }
