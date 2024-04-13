@@ -9,11 +9,11 @@ A Texas hold 'em poker shared secret state showcase with Oasis Sapphire
 
 ## Setup
 
-- tbd
+- `yarn`
 
 ## Running
 
-- tbd
+- `PRIVATE_KEY="0x..." npx hardhat run scripts/run-game.ts --network sapphire-testnet`
 
 ## Flow
 
