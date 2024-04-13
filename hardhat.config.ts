@@ -3,7 +3,7 @@ import '@oasisprotocol/sapphire-hardhat';
 import "@nomicfoundation/hardhat-toolbox";
 
 const config: HardhatUserConfig = {
-    solidity: "0.8.17",
+    solidity: "0.8.9",
         networks: {
             'sapphire-testnet': {
                 url: "https://testnet.sapphire.oasis.io",
