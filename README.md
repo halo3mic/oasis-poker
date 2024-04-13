@@ -1,6 +1,6 @@
-# Oasis Poker
+# Oasis-Poker
 
-A shared secret states showcase with Oasis Sapphire
+A Texas hold 'em poker shared secret state showcase with Oasis Sapphire
 
 ## Prerequisites
 
@@ -25,11 +25,12 @@ A shared secret states showcase with Oasis Sapphire
 4. Table collects `smallBlind` from user `d+1` (Charlie) and `bigBlind` from user `d+2` (Alice), each `mod numberOfPlayers`
 5. Table hands out two random cards to each of the three players
 
-### Each round
+### Each round (flop, turn, river)
 
-1. For `i` in `0..numberOfPlayers`, Player `d+3+i mod numberPlayers` is requried to make one of these choices:
+1. For `i` in `0..numberOfPlayers`, Player `d+3+i`(or `d+1+i` if flop)` mod numberOfPlayers`  is requried to make one of these choices (unless player has folded):
    1. Fold
-   2. Raise
+   2. Raise by `r`
    3. Check (if allowed)
-2. Reveal next card(s)
-3. If last round, identify winning hand
+2. If there is a raise, a new choice-sub-round of length `numberOfPlayers` is started and executed starting from (1)
+3. Table reveals next card(s): 3 if flop, 1 otherwise
+4. If river, identify winning hand
