@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
 import "./Constants.sol";
@@ -10,7 +11,7 @@ struct Deck {
 
 library DeckUtils {
     
-    function create() internal view returns (Deck memory) {
+    function create() internal pure returns (Deck memory) {
         // bytes memory seed = Sapphire.randomBytes(NCARDS, "");
         bytes memory seed = new bytes(NCARDS);
         for (uint i=0; i<NCARDS; ++i) {
