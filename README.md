@@ -44,3 +44,4 @@ A Texas hold 'em poker shared secret state showcase with Oasis Sapphire
 # TODOs
 
 - [ ] Support splitpots
+- [ ] Support rules for raise amounts
