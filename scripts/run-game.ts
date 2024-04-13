@@ -1,5 +1,6 @@
 
 // Usage: pnpm hardhat run --network <network> scripts/run-game.ts
+// https://explorer.oasis.io/testnet/sapphire/address/oasis1qq66rexpac3vylyagzawy0d5x8djzvpvgg57mvak (for 0x5dcccaad516d68e01823aff6e75de8be73fb57bc)
 
 import { ethers } from 'hardhat'
 
