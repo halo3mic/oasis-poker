@@ -29,8 +29,18 @@ A Texas hold 'em poker shared secret state showcase with Oasis Sapphire
 
 1. For `i` in `0..numberOfPlayers`, Player `d+3+i`(or `d+1+i` if flop)` mod numberOfPlayers`  is requried to make one of these choices (unless player has folded):
    1. Fold
-   2. Raise by `r`
+   2. Raise by `r` (if enough cash available)
    3. Check (if allowed)
-2. If there is a raise, a new choice-sub-round of length `numberOfPlayers` is started and executed starting from (1)
-3. Table reveals next card(s): 3 if flop, 1 otherwise
-4. If river, identify winning hand
+2. If only one player is left (has not folded), they win
+3. If there is a raise, a new choice-sub-round of length `numberOfPlayers` is started and executed starting from (1)
+4. Table reveals next card(s): 3 if flop, 1 otherwise
+5. If river, identify winning player
+
+### Win resolution
+
+1. Transfer pot amount to winning player
+2. Dissolve table
+
+# TODOs
+
+- [ ] Support splitpots
