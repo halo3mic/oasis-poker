@@ -2,11 +2,48 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/Orest/LocalDocuments/Repos/Hackathons/oasis-poker/contracts/Game.sol": {
-      "lastModificationDate": 1713026703234,
-      "contentHash": "f57ac23a152b3a227cc2ce5bee1069f7",
+      "lastModificationDate": 1713081219276,
+      "contentHash": "bfa012c9e6b14c0cfc633799d78dc4a9",
       "sourceName": "contracts/Game.sol",
       "solcConfig": {
-        "version": "0.8.17",
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Deck.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "GameUtils"
+      ]
+    },
+    "/Users/Orest/LocalDocuments/Repos/Hackathons/oasis-poker/contracts/Cards.sol": {
+      "lastModificationDate": 1713080962625,
+      "contentHash": "b1eacc54d793a4289a31cc448b5d961f",
+      "sourceName": "contracts/Cards.sol",
+      "solcConfig": {
+        "version": "0.8.9",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -33,7 +70,153 @@
         "^0.8.9"
       ],
       "artifacts": [
-        "Game"
+        "CardUtils"
+      ]
+    },
+    "/Users/Orest/LocalDocuments/Repos/Hackathons/oasis-poker/contracts/Poker.sol": {
+      "lastModificationDate": 1713080962625,
+      "contentHash": "261949798f22abd55159975c297aab2a",
+      "sourceName": "contracts/Poker.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Game.sol",
+        "./Cards.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "Poker"
+      ]
+    },
+    "/Users/Orest/LocalDocuments/Repos/Hackathons/oasis-poker/contracts/Deck.sol": {
+      "lastModificationDate": 1713080962625,
+      "contentHash": "9333cf4251208fa83710f197e2c5500c",
+      "sourceName": "contracts/Deck.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "node_modules/@oasisprotocol/sapphire-contracts/contracts/Sapphire.sol",
+        "./Cards.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "DeckUtils"
+      ]
+    },
+    "/Users/Orest/LocalDocuments/Repos/Hackathons/oasis-poker/node_modules/@oasisprotocol/sapphire-contracts/contracts/Sapphire.sol": {
+      "lastModificationDate": 1713081198984,
+      "contentHash": "3f116912aea78872210ad94b44b85be5",
+      "sourceName": "node_modules/@oasisprotocol/sapphire-contracts/contracts/Sapphire.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Sapphire"
+      ]
+    },
+    "/Users/Orest/LocalDocuments/Repos/Hackathons/oasis-poker/contracts/GameSecretive.sol": {
+      "lastModificationDate": 1713081534571,
+      "contentHash": "1aaca1b94d7bc122cf51515d27653e6d",
+      "sourceName": "contracts/GameSecretive.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "GameSecretive"
       ]
     }
   }

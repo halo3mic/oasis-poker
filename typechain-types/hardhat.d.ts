@@ -17,23 +17,59 @@ declare module "hardhat/types/runtime" {
       name: "Game",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Game__factory>;
+    getContractFactory(
+      name: "GameSecretive",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.GameSecretive__factory>;
+    getContractFactory(
+      name: "Poker",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Poker__factory>;
 
     getContractAt(
       name: "Game",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.Game>;
+    getContractAt(
+      name: "GameSecretive",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.GameSecretive>;
+    getContractAt(
+      name: "Poker",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Poker>;
 
     deployContract(
       name: "Game",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.Game>;
+    deployContract(
+      name: "GameSecretive",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.GameSecretive>;
+    deployContract(
+      name: "Poker",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.Poker>;
 
     deployContract(
       name: "Game",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.Game>;
+    deployContract(
+      name: "GameSecretive",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.GameSecretive>;
+    deployContract(
+      name: "Poker",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.Poker>;
 
     // default types
     getContractFactory(
