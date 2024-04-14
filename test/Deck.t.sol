@@ -42,6 +42,7 @@ contract DeckTest is Test {
 
     ICheat cheat = ICheat(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D);
     address constant RANDOM_BYTES = 0x0100000000000000000000000000000000000001;
+    Deck deck;
 
     function setUp() public {
         address rb = address(new RandomBytes());
@@ -60,7 +61,7 @@ contract DeckTest is Test {
     }
 
     function testDeckIsFull() public {
-        Deck memory deck = DeckUtils.create();
+        deck.fill();
 
         uint bloom;
         for (uint i; i < 52; ++i) {

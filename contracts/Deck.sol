@@ -13,9 +13,9 @@ struct Deck {
 
 library DeckUtils {
     
-    function create() internal view returns (Deck memory) {
+    function fill(Deck storage deck) internal {
         bytes memory seed = Sapphire.randomBytes(NCARDS, "");
-        return Deck(seedIntoCardIndices(seed));
+        deck.indices = seedIntoCardIndices(seed);
     }
 
     function seedIntoCardIndices(bytes memory randomBytes) internal pure returns (bytes memory) {
@@ -38,7 +38,7 @@ library DeckUtils {
         return indices;
     }
 
-    function pop(Deck memory deck) internal returns (Card memory) {
+    function pop(Deck storage deck) internal returns (Card memory) {
         require(deck.indices.length > 0, "Deck is empty");
         bytes memory indices = deck.indices;
         bytes1 cardIdx = indices[indices.length - 1];
