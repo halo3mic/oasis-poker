@@ -10,6 +10,14 @@ https://github.com/halo3mic/oasis-poker
 
 https://www.tella.tv/video/cluzcfk7f018d0gld2p9l7y68/view 
 
+## Quadratic Voting
+
+http://ethdamqf.com/#/recipients/0x25bfb27b4dd6cec8d8c47ae73aa01e585e6509774e442d76b983a73b05427009
+
+## Submission
+
+https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluz9foq001ctz301f3fabmr1
+
 ## Prerequisites
 
 - Oasis Sapphire
