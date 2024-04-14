@@ -23,4 +23,13 @@ contract Poker {
         gameToDeck[gameId].join(msg.sender);
     }
 
+    function startGame(uint gameId) {
+        // TODO: Restrict
+        gameToDeck[gameId].start()
+    }
+
+    function getOwnHand(uint gameId, uint playerIndex) {
+        // return gameToDeck[gameId].players[playerIndex].hand()
+    }
+
 }

@@ -36,6 +36,7 @@ library GameUtils {
         game.players.push(player);
     }
 
-    
-
+    function start(Game storage game) {
+        game.status = GameStatus.Open;
+    }
 }
