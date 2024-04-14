@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/Orest/LocalDocuments/Repos/Hackathons/oasis-poker/contracts/Game.sol": {
-      "lastModificationDate": 1713081219276,
-      "contentHash": "bfa012c9e6b14c0cfc633799d78dc4a9",
+      "lastModificationDate": 1713085896052,
+      "contentHash": "44703180db63fa355388c69c7f3afa25",
       "sourceName": "contracts/Game.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -74,8 +74,8 @@
       ]
     },
     "/Users/Orest/LocalDocuments/Repos/Hackathons/oasis-poker/contracts/Poker.sol": {
-      "lastModificationDate": 1713080962625,
-      "contentHash": "261949798f22abd55159975c297aab2a",
+      "lastModificationDate": 1713085779264,
+      "contentHash": "bfd8dd3c377f5680340e7d9bcd9fdaae",
       "sourceName": "contracts/Poker.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -112,8 +112,8 @@
       ]
     },
     "/Users/Orest/LocalDocuments/Repos/Hackathons/oasis-poker/contracts/Deck.sol": {
-      "lastModificationDate": 1713080962625,
-      "contentHash": "9333cf4251208fa83710f197e2c5500c",
+      "lastModificationDate": 1713085853483,
+      "contentHash": "03cfd03c94b606a61f7dff3ed48bbc52",
       "sourceName": "contracts/Deck.sol",
       "solcConfig": {
         "version": "0.8.9",

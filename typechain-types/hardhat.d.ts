@@ -14,10 +14,6 @@ import * as Contracts from ".";
 declare module "hardhat/types/runtime" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
-      name: "Game",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Game__factory>;
-    getContractFactory(
       name: "GameSecretive",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.GameSecretive__factory>;
@@ -27,11 +23,6 @@ declare module "hardhat/types/runtime" {
     ): Promise<Contracts.Poker__factory>;
 
     getContractAt(
-      name: "Game",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Game>;
-    getContractAt(
       name: "GameSecretive",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
@@ -43,10 +34,6 @@ declare module "hardhat/types/runtime" {
     ): Promise<Contracts.Poker>;
 
     deployContract(
-      name: "Game",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Game>;
-    deployContract(
       name: "GameSecretive",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.GameSecretive>;
@@ -55,11 +42,6 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.Poker>;
 
-    deployContract(
-      name: "Game",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Game>;
     deployContract(
       name: "GameSecretive",
       args: any[],

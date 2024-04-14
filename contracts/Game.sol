@@ -10,9 +10,16 @@ enum GameStatus {
     Closed
 }
 
+struct PlayerHand {
+    Card card0;
+    Card card1;
+}
+
+// FIX: UnimplementedFeatureError: Copying of type struct PlayerHand memory[] memory to storage not yet supported.
 struct Game {
     Deck deck;
     address[] players;
+    // PlayerHand[] playerHands;
     GameStatus status;
 }
 
@@ -28,15 +35,21 @@ library GameUtils {
         return Game({
             deck: DeckUtils.create(),
             players: new address[](0),
+            // playerHands: new PlayerHand[](0),
             status: GameStatus.Pending
         });
     }
 
     function join(Game storage game, address player) internal onlyPending(game) {
+        // TODO: Require stake
+        // Card memory card0 = game.deck.pop();
+        // Card memory card1 = game.deck.pop();
+        // PlayerHand memory hand = new PlayerHand({card0: card0, card1: card1});
         game.players.push(player);
+        // game.playerHands.push(hand);
     }
 
-    function start(Game storage game) {
+    function start(Game storage game) public {
         game.status = GameStatus.Open;
     }
 }

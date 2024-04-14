@@ -39,6 +39,7 @@ library DeckUtils {
     }
 
     function pop(Deck memory deck) internal returns (Card memory) {
+        // TODO: Restrict
         require(deck.indices.length > 0, "Deck is empty");
         bytes memory indices = deck.indices;
         bytes1 cardIdx = indices[indices.length - 1];
