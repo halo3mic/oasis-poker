@@ -11,13 +11,13 @@ async function main() {
   console.log('Poker deployed to:', await poker.getAddress());
 
   const tx = await poker.createGame()
-  // createSecret(
-  //   'ingredient',
-  //   30 /* seconds */,
-  //   Buffer.from('brussels sprouts'),
-  // );
-  // console.log('Storing a secret in', tx.hash);
+  console.log('Creating a new poker game (table):', tx.hash);
   await tx.wait();
+  
+  console.log('Joining the newly created game:', tx.hash);
+  const tx2 = await poker.joinGame(0)
+  await tx2.wait();
+  
   // try {
     // console.log('Checking the secret');
     // await poker.connect(ethers.provider).revealSecret.staticCall(0);
@@ -26,19 +26,19 @@ async function main() {
   // } catch (e: any) {
   //   console.log('failed to fetch secret:', e.message);
   // }
-  console.log('Waiting...');
-
+  
   // Manually generate some transactions to increment local Docker
   // container block
   if ((await ethers.provider.getNetwork()).name == 'sapphire_localnet') {
     await generateTraffic(10);
   }
-
+  
   // await new Promise((resolve) => setTimeout(resolve, 30_000));
   // console.log('Checking the secret again');
   // await (await poker.revealSecret(0)).wait(); // Reveal the secret.
   // const secret = await poker.revealSecret.staticCallResult(0); // Get the value.
   // console.log('The secret ingredient is', Buffer.from(secret[0].slice(2), 'hex').toString());
+  console.log('Done');
 }
 
 async function generateTraffic(n: number) {

@@ -1,6 +1,10 @@
 # Oasis-Poker
 
-A Texas hold 'em poker shared secret state showcase with Oasis Sapphire
+Exactly what you'd do in an oasis: Play poker! This is a Texas hold 'em poker shared secret state showcase with Oasis Sapphire. It allows shuffling a deck of cards confidentially in order to distribute secret hand cards to players that can then be used do determine the game winner.
+
+![poker](./oasis-poker.jpeg)
+
+https://github.com/halo3mic/oasis-poker
 
 ## Prerequisites
 
@@ -11,13 +15,13 @@ A Texas hold 'em poker shared secret state showcase with Oasis Sapphire
 
 - `yarn`
 
-## Running
+## Deployment and Testing
 
 - `PRIVATE_KEY="0x..." npx hardhat run scripts/run-game.ts --network sapphire-testnet`
 
-## Flow
+## Full Game Flow
 
-### Setup
+### Setup (WIP)
 
 1. Init a table with parameters: `smallBlind, bigBlind`
 2. Users Alice, Bob and Charlie join the table (FIFO ordering, indices `0, 1, 2`)
@@ -43,5 +47,6 @@ A Texas hold 'em poker shared secret state showcase with Oasis Sapphire
 
 # TODOs
 
+- [ ] Support remainder of full game flow
 - [ ] Support splitpots
 - [ ] Support rules for raise amounts
