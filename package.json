@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@oasisprotocol/sapphire-contracts": "^0.2.8",
     "hardhat": "^2.22.2",
     "ts-node": "^10.9.2"
   }
