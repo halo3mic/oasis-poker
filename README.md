@@ -6,6 +6,10 @@ Exactly what you'd do in an oasis: Play poker! This is a Texas hold 'em poker sh
 
 https://github.com/halo3mic/oasis-poker
 
+## Demo
+
+https://www.tella.tv/video/cluzcfk7f018d0gld2p9l7y68/view 
+
 ## Prerequisites
 
 - Oasis Sapphire
