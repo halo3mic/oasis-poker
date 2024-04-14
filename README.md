@@ -18,6 +18,11 @@ https://github.com/halo3mic/oasis-poker
 ## Deployment and Testing
 
 - `PRIVATE_KEY="0x..." npx hardhat run scripts/run-game.ts --network sapphire-testnet`
+- cf. https://explorer.oasis.io/testnet/sapphire/tx/0x77e7d1c858ea621daab76fbebd7ee22443aeba74e597f28843acb05d84f77dfb
+
+## Current State
+
+We wanted to take Oasis Sapphire for a spin, hands-on. We created a basic deck shuffling logic that leverages the TEE-powered credible confidentiality of the underlying chain. It can be used to implement a game of poker.
 
 ## Full Game Flow
 
@@ -50,3 +55,4 @@ https://github.com/halo3mic/oasis-poker
 - [ ] Support remainder of full game flow
 - [ ] Support splitpots
 - [ ] Support rules for raise amounts
+- [ ] Add a frontend

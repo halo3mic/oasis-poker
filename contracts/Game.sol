@@ -19,28 +19,38 @@ struct PlayerHand {
 struct Game {
     Deck deck;
     address[] players;
-    // PlayerHand[] playerHands;
+    // PlayerHand exampleHand;
+    PlayerHand exampleHand;
     GameStatus status;
 }
 
 
 library GameUtils {
+    using DeckUtils for Deck;
+    using CardUtils for Card;
 
     modifier onlyPending(Game storage game) {
         require(game.status == GameStatus.Pending, "Game is not pending");
         _;
     }
 
-    function create() internal view returns (Game memory) {
+    function create() internal returns (Game memory) {
+        Deck memory deck = DeckUtils.create();
+
+        // example:
+        Card memory card0 = deck.pop();
+        Card memory card1 = deck.pop();
+
         return Game({
-            deck: DeckUtils.create(),
+            deck: deck,
             players: new address[](0),
             // playerHands: new PlayerHand[](0),
+            exampleHand: PlayerHand({card0: card0, card1: card1}),
             status: GameStatus.Pending
         });
     }
 
-    function join(Game storage game, address player) internal onlyPending(game) {
+    function join(Game storage game, address player) internal onlyPending(game)  {
         // TODO: Require stake
         // Card memory card0 = game.deck.pop();
         // Card memory card1 = game.deck.pop();
@@ -51,5 +61,9 @@ library GameUtils {
 
     function start(Game storage game) internal {
         game.status = GameStatus.Open;
+    }
+
+    function viewHand(Game storage game) view internal returns (string memory, string memory) {
+        return (game.exampleHand.card0.toString(), game.exampleHand.card1.toString());
     }
 }

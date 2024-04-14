@@ -33,4 +33,8 @@ contract Poker {
         // return gameToDeck[gameId].playerHands[playerIndex];
     // }
 
+    function viewHand(uint gameId) view external returns (string memory, string memory) {
+        return gameToDeck[gameId].viewHand();
+    }
+
 }

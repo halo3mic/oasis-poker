@@ -17,6 +17,10 @@ async function main() {
   console.log('Joining the newly created game:', tx.hash);
   const tx2 = await poker.joinGame(0)
   await tx2.wait();
+
+  console.log('Display hand');
+  console.log(await poker.viewHand(0));
+
   
   // try {
     // console.log('Checking the secret');
