@@ -49,7 +49,7 @@ library GameUtils {
         // game.playerHands.push(hand);
     }
 
-    function start(Game storage game) public {
+    function start(Game storage game) internal {
         game.status = GameStatus.Open;
     }
 }
