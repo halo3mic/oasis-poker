@@ -2,6 +2,8 @@
 
 Exactly what you'd do in an oasis: Play poker! This is a Texas hold 'em poker shared secret state showcase with Oasis Sapphire. It allows shuffling a deck of cards confidentially in order to distribute secret hand cards to players that can then be used do determine the game winner.
 
+An ETHDam 2024 hackathon project.
+
 ![poker](./oasis-poker.jpeg)
 
 https://github.com/halo3mic/oasis-poker
